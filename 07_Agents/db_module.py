@@ -56,11 +56,13 @@ customer_table=[
     "orders": [
         {
             "order_id": 1,
-            "description": "An order of 1 dozen pencils"
+            "quantity": 1,
+            "description": "Pack of 12 pencils"
         },
         {
             "order_id": 2,
-            "description": "An order of 2 markers"
+            "quantity": 12,
+            "description": "Markers"
         }
     ],
     "postal_code": "33215"
@@ -70,6 +72,18 @@ customer_table=[
     "first_name": "David",
     "last_name": "Lee",
     "age": 29,
+    "orders": [
+        {
+            "order_id": 11,
+            "quantity": 12,
+            "description": "Notebooks"
+        },
+        {
+            "order_id": 21,
+            "quantity": 120,
+            "description": "Pens"
+        }
+    ],
     "postal_code": "99567"
   },
   {
@@ -81,11 +95,12 @@ customer_table=[
   }
 ]
 
+def list_customers(filter):        
+    return customer_table
+
 def customer_lookup(id):
-    print(f"search by customer {id}")
     for customer in customer_table:
         if customer["id"] == int(id):
-            print(f"found customer {id} {customer}")
             return customer
         
     return None
